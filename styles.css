@@ -201,6 +201,30 @@ nav.primary-nav a.nav-contact-btn svg{ width:0.85rem; height:0.85rem; flex:none;
   nav.primary-nav{ display:flex; }
 }
 
+/* Below 860px the primary nav is hidden and the header is just
+   brand + CV + lang toggle + hamburger — these must never wrap to a
+   second row, so force one line and shrink everything to always fit,
+   down to the narrowest phones. */
+@media (max-width:859px){
+  .nav-shell{ flex-wrap:nowrap; gap:0.5rem; }
+  .brand{
+    font-size:0.95rem;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    min-width:0;
+    flex-shrink:1;
+  }
+  .header-right{ gap:0.4rem; flex-shrink:0; }
+  .nav-cv-btn{ padding:0.3rem 0.55rem; font-size:0.7rem; }
+  .lang-toggle button{ padding:0.25rem 0.5rem; font-size:0.7rem; }
+  .menu-toggle{ width:2rem; height:2rem; }
+  .menu-toggle svg{ width:1.1rem; height:1.1rem; }
+}
+@media (max-width:360px){
+  .brand{ font-size:0.85rem; }
+  .nav-cv-btn{ padding:0.25rem 0.45rem; font-size:0.65rem; }
+}
+
 /* mobile dropdown menu */
 .mobile-menu{
   display:none;
